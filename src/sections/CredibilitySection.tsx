@@ -15,11 +15,6 @@ const CredibilitySection: React.FC = () => {
       description: 'Presente em todas as regiões do Brasil, com suporte local.',
     },
     {
-      icon: <Award className="text-yellow-600" size={32} />,
-      title: 'Reconhecimento',
-      description: 'Premiada como melhor solução educacional por 3 anos consecutivos.',
-    },
-    {
       icon: <Target className="text-red-600" size={32} />,
       title: 'Foco Educacional',
       description: 'Desenvolvido por especialistas em educação e tecnologia.',
@@ -58,10 +53,6 @@ const CredibilitySection: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <div className="text-3xl font-bold mb-2">24/7</div>
                 <p className="text-gray-300">Suporte</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="text-3xl font-bold mb-2">50K+</div>
-                <p className="text-gray-300">Usuários Ativos</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <div className="text-3xl font-bold mb-2">100%</div>
