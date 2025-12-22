@@ -32,4 +32,21 @@
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
+  /* src/index.css (adicione estas cores no final) */
+
+/* Cores adicionais para os novos serviços */
+.bg-indigo-50 { background-color: #eef2ff; }
+.border-indigo-200 { border-color: #c7d2fe; }
+.text-indigo-700 { color: #4338ca; }
+
+/* Garantir que todas as cores do Tailwind estejam disponíveis */
+@layer utilities {
+  .bg-yellow-50 { background-color: #fefce8; }
+  .border-yellow-200 { border-color: #fde047; }
+  .text-yellow-700 { color: #a16207; }
+  
+  .bg-indigo-50 { background-color: #eef2ff; }
+  .border-indigo-200 { border-color: #c7d2fe; }
+  .text-indigo-700 { color: #4338ca; }
+}
 }

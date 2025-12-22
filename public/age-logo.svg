@@ -1,0 +1,18 @@
+<!-- public/age-logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fundo azul com borda arredondada -->
+  <rect x="2" y="2" width="96" height="96" rx="20" fill="#2563eb" stroke="#1d4ed8" stroke-width="2"/>
+  
+  <!-- Letra A estilizada -->
+  <path d="M30,70 L50,30 L70,70" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="40" y1="55" x2="60" y2="55" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Símbolo de educação/livro -->
+  <path d="M25,25 Q25,15 35,15 L65,15 Q75,15 75,25 L75,35 Q75,45 65,45 L35,45 Q25,45 25,35 Z" 
+        fill="white" opacity="0.9"/>
+  <path d="M30,20 Q30,12 40,12 L60,12 Q70,12 70,20 L70,30 Q70,38 60,38 L40,38 Q30,38 30,30 Z" 
+        fill="#2563eb" opacity="0.8"/>
+  
+  <!-- Efeito de brilho -->
+  <circle cx="30" cy="30" r="10" fill="white" opacity="0.2" filter="blur(2px)"/>
+</svg>
