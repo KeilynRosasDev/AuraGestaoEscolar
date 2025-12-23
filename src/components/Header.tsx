@@ -1,13 +1,14 @@
 // src/components/Header.tsx
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, Home, Settings, Info, BookOpen, User, GraduationCap, FileText } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activePage, setActivePage] = useState('home');
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Efeito para detectar scroll
   useEffect(() => {
@@ -25,6 +26,7 @@ const Header: React.FC = () => {
     if (path === '/') setActivePage('home');
     else if (path.startsWith('/servicos')) setActivePage('servicos');
     else if (path.startsWith('/sobre')) setActivePage('sobre');
+    else if (path.startsWith('/secretaria')) setActivePage('secretaria');
   }, [location]);
 
   const menuItems = [
@@ -68,25 +70,32 @@ const Header: React.FC = () => {
       label: 'Aluno', 
       variant: 'outline',
       icon: <User size={16} />,
-      color: 'blue'
+      color: 'blue',
+      action: () => console.log('Acessar área do aluno') // Placeholder para futura implementação
     },
     { 
       label: 'Educador', 
       variant: 'outline',
       icon: <BookOpen size={16} />,
-      color: 'green'
+      color: 'green',
+      action: () => console.log('Acessar área do educador') // Placeholder para futura implementação
     },
     { 
       label: 'Secretaria', 
       variant: 'outline',
       icon: <FileText size={16} />,
-      color: 'purple'
+      color: 'purple',
+      action: () => {
+        navigate('/secretaria');
+        setIsMenuOpen(false);
+      }
     },
     { 
       label: 'Gestor', 
       variant: 'primary',
       icon: <GraduationCap size={16} />,
-      color: 'blue'
+      color: 'blue',
+      action: () => console.log('Acessar área do gestor') // Placeholder para futura implementação
     },
   ];
 
@@ -170,6 +179,7 @@ const Header: React.FC = () => {
                 {userButtons.map((button, index) => (
                   <button
                     key={button.label}
+                    onClick={button.action}
                     className={`
                       relative px-3 py-1.5 rounded-lg font-medium transition-all duration-200 flex items-center space-x-1.5
                       text-sm
@@ -177,7 +187,7 @@ const Header: React.FC = () => {
                         ? `bg-gradient-to-r ${button.color === 'blue' ? 'from-blue-600 to-blue-700' : 'from-green-600 to-green-700'} text-white hover:shadow-md hover:scale-[1.02] shadow-sm min-w-[80px] justify-center` 
                         : `border ${button.color === 'blue' ? 'border-blue-600 text-blue-600' : button.color === 'green' ? 'border-green-600 text-green-600' : 'border-purple-600 text-purple-600'} hover:bg-${button.color}-50 min-w-[70px] justify-center`
                       }
-                      ${isActive('servicos') && button.label === 'Gestor' ? 'ring-1 ring-blue-400 ring-offset-1' : ''}
+                      ${isActive('secretaria') && button.label === 'Secretaria' ? 'ring-1 ring-purple-400 ring-offset-1' : ''}
                     `}
                   >
                     <div className={`${button.variant === 'primary' ? 'text-white' : `text-${button.color}-600`}`}>
@@ -270,6 +280,10 @@ const Header: React.FC = () => {
                     {userButtons.map((button) => (
                       <button
                         key={button.label}
+                        onClick={() => {
+                          button.action();
+                          setIsMenuOpen(false);
+                        }}
                         className={`
                           flex items-center justify-center space-x-1.5 px-3 py-2 rounded-lg font-medium transition-all duration-300 text-sm
                           ${button.variant === 'primary' 
@@ -277,7 +291,6 @@ const Header: React.FC = () => {
                             : `border ${button.color === 'blue' ? 'border-blue-600 text-blue-600' : button.color === 'green' ? 'border-green-600 text-green-600' : 'border-purple-600 text-purple-600'}`
                           }
                         `}
-                        onClick={() => setIsMenuOpen(false)}
                       >
                         {button.icon}
                         <span>{button.label}</span>

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
+import SecretariaPage from './pages/SecretariaPage';
+import SecretariaLoginPage from './pages/SecretariaLoginPage';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +14,8 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/servicos" element={<ServicesPage />} />
         <Route path="/sobre" element={<AboutPage />} />
+        <Route path="/secretaria" element={<SecretariaPage />} />
+        <Route path="/secretaria/login" element={<SecretariaLoginPage />} />
       </Routes>
     </Router>
   );

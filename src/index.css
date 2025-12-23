@@ -49,4 +49,16 @@
   .border-indigo-200 { border-color: #c7d2fe; }
   .text-indigo-700 { color: #4338ca; }
 }
+/* Adicione no src/index.css */
+@layer utilities {
+  .bg-pink-50 { background-color: #fdf2f8; }
+  .border-pink-200 { border-color: #fbcfe8; }
+  .text-pink-700 { color: #be185d; }
+  .bg-pink-100 { background-color: #fce7f3; }
+  
+  .bg-indigo-50 { background-color: #eef2ff; }
+  .border-indigo-200 { border-color: #c7d2fe; }
+  .text-indigo-700 { color: #4338ca; }
+  .bg-indigo-100 { background-color: #e0e7ff; }
+}
 }
