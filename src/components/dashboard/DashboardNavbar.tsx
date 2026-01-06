@@ -114,11 +114,11 @@ const DashboardNavbar: React.FC<DashboardNavbarProps> = ({
 </button>
             
             <button 
-              onClick={() => console.log('Documentação - Página em desenvolvimento')}
-              className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-medium hover:shadow-md transition-all duration-300 flex items-center space-x-2 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <FileText size={16} />
-              <span>Documentação</span>
+            onClick={() => navigate('/secretaria/documentacao')}
+            className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-medium hover:shadow-md transition-shadow flex items-center space-x-2"
+>
+            <FileText size={16} />
+            <span>Documentação</span>
             </button>
           </div>
 
