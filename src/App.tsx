@@ -8,6 +8,7 @@ import SecretariaPage from './pages/SecretariaPage';
 import SecretariaLoginPage from './pages/SecretariaLoginPage';
 import DashboardSecretariaPage from './pages/DashboardSecretariaPage';
 import MatriculaAlunoPage from './pages/MatriculaAlunoPage';
+import CadastroProfessorPage from './pages/CadastroProfessorPage';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/secretaria/login" element={<SecretariaLoginPage />} />
         <Route path="/secretaria/dashboard" element={<DashboardSecretariaPage />} />
         <Route path="/secretaria/matricula" element={<MatriculaAlunoPage />} />
+        <Route path="/secretaria/professor" element={<CadastroProfessorPage />} />
       </Routes>
     </Router>
   );
