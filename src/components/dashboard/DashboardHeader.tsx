@@ -6,10 +6,14 @@ import {
   FileText, 
   Download,
   Filter,
-  Calendar
+  Calendar,
+  Plus
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardHeader: React.FC = () => {
+  const navigate = useNavigate();
+
   const today = new Date().toLocaleDateString('pt-BR', {
     weekday: 'long',
     year: 'numeric',
@@ -22,25 +26,29 @@ const DashboardHeader: React.FC = () => {
       label: 'Nova Matrícula',
       icon: Users,
       color: 'bg-gradient-to-r from-blue-600 to-blue-700',
-      description: 'Cadastrar novo aluno'
+      description: 'Cadastrar novo aluno',
+      action: () => navigate('/secretaria/matricula')
     },
     {
       label: 'Cadastrar Professor',
       icon: UserPlus,
       color: 'bg-gradient-to-r from-green-600 to-green-700',
-      description: 'Adicionar docente'
+      description: 'Adicionar docente',
+      action: () => console.log('Cadastrar Professor') // Atualize quando criar a página
     },
     {
       label: 'Documentação',
       icon: FileText,
       color: 'bg-gradient-to-r from-purple-600 to-purple-700',
-      description: 'Emitir documentos'
+      description: 'Emitir documentos',
+      action: () => console.log('Documentação') // Atualize quando criar a página
     },
     {
       label: 'Exportar Dados',
       icon: Download,
       color: 'bg-gradient-to-r from-orange-600 to-orange-700',
-      description: 'Relatórios em PDF/Excel'
+      description: 'Relatórios em PDF/Excel',
+      action: () => console.log('Exportar Dados')
     },
   ];
 
@@ -82,12 +90,14 @@ const DashboardHeader: React.FC = () => {
             {actionButtons.map((button, index) => (
               <button
                 key={index}
-                className={`${button.color} rounded-xl p-6 text-left hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+                onClick={button.action}
+                className={`${button.color} rounded-xl p-6 text-left hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <button.icon size={24} className="text-white/90" />
-                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-                    + Novo
+                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full flex items-center space-x-1">
+                    <Plus size={10} />
+                    <span>Novo</span>
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{button.label}</h3>

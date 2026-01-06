@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import SecretariaPage from './pages/SecretariaPage';
 import SecretariaLoginPage from './pages/SecretariaLoginPage';
 import DashboardSecretariaPage from './pages/DashboardSecretariaPage';
+import MatriculaAlunoPage from './pages/MatriculaAlunoPage';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/secretaria" element={<SecretariaPage />} />
         <Route path="/secretaria/login" element={<SecretariaLoginPage />} />
         <Route path="/secretaria/dashboard" element={<DashboardSecretariaPage />} />
+        <Route path="/secretaria/matricula" element={<MatriculaAlunoPage />} />
       </Routes>
     </Router>
   );
